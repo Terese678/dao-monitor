@@ -1,0 +1,133 @@
+/* Base reset and font */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0a0a0f;
+  color: #e8e8f0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff6820;
+}
+
+header p {
+  color: #888;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Card */
+.card {
+  background: #13131a;
+  border: 1px solid #222230;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #fff;
+}
+
+/* Form elements */
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 0.35rem;
+  margin-top: 1rem;
+}
+
+label:first-of-type { margin-top: 0; }
+
+input, textarea {
+  width: 100%;
+  background: #0d0d14;
+  border: 1px solid #2a2a3a;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: #e8e8f0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: #ff6820;
+}
+
+textarea { resize: vertical; font-family: inherit; }
+
+button {
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #ff4d00, #ff9a3c);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Verdict badge */
+.badge {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.badge.flagged { background: #2a0a0a; color: #ff4d4d; }
+.badge.clean   { background: #0a2a0a; color: #4dff88; }
+
+/* Verdict sections */
+.verdict-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #0d0d14;
+  border-radius: 8px;
+  border-left: 3px solid #ff6820;
+}
+
+.verdict-section.ai { border-left-color: #6c63ff; }
+
+.verdict-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.verdict-section p { font-size: 0.95rem; line-height: 1.6; }
+
+/* Error */
+.card.error { border-color: #ff4d4d; }
+.card.error p { color: #ff4d4d; }
