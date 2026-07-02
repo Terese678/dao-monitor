@@ -28,7 +28,7 @@ Three rules run first, mirroring the logic encoded in the on-chain smart contrac
 | Justification quality | Justification text is fewer than 10 characters | FLAGGED |
 | Recipient history | Recipient address is not in the DAO's known-address registry | FLAGGED |
 
-If any rule fires, the proposal is flagged with a plain-language reason. All three rules must pass for a proposal to be considered CLEAN.
+If any rule fires, the proposal is flagged with a plain-language reason. All three rules must pass for a proposal to be considered clean.
 
 **Layer 2: AI Qualitative Analysis**
 
@@ -53,9 +53,9 @@ The final verdict combines both layers: a rule result (FLAGGED / CLEAN with reas
 │  DaoMonitor Smart Contract (Rust/Odra)               │
 │  Deployed on Casper Testnet                          │
 │                                                      │
-│  - evaluate_proposal() — runs rules on-chain         │
-│  - register_address()  — adds to known-address list  │
-│  - get_verdict()       — retrieves stored verdict    │
+│  - evaluate_proposal(); runs rules on-chain         │
+│  - register_address(); adds to known-address list  │
+│  - get_verdict(); retrieves stored verdict    │
 │                                                      │
 │  Permanent on-chain audit trail of every verdict     │
 └──────────────────────────────────────────────────────┘

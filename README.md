@@ -72,7 +72,7 @@ The DaoMonitor contract is deployed and verified on Casper Testnet.
 | Field | Value |
 |---|---|
 | Contract Package Hash | `d1c56241f681405a5f57adc4021e3a642d5c24cd006815e332d59783aef252dd` |
-| Deploy Transaction | [View on testnet.cspr.live](https://testnet.cspr.live/transaction/52c0252373a1a62a0f7916da28e3261fc6d3e3c72bdda767aa1693ca73cebe21) |
+| Deploy Transaction | [View on testnet.cspr.live](https://testnet.cspr.live/deploy/52c0252373a1a62a0f7916da28e3261fc6d3e3c72bdda767aa1693ca73cebe21) |
 | Network | Casper Testnet (`casper-test`) |
 | Protocol Version | 2.2.2 |
 
