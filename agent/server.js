@@ -67,7 +67,8 @@ app.post("/evaluate", async (req, res) => {
   res.json({ id, flagged, deterministicVerdict, aiOpinion });
 });
 
-// Start the server on port 4000
-app.listen(4000, () => {
-  console.log("Agent server running on http://localhost:4000");
+// Start the server, use the platform's assigned port, fall back to 4000 for local dev
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Agent server running on port ${PORT}`);
 });
