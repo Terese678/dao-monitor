@@ -4,6 +4,8 @@
 
 An agentic system that flags risky DAO treasury proposals before funds move - combining deterministic on-chain rules with LLM qualitative analysis for a two-layer risk verdict.
 
+Live Demo: https://dao-monitor.vercel.app
+
 ![DAO Treasury Monitor UI](./docs/ui-screenshot.png)
 
 ---
@@ -63,6 +65,8 @@ The final verdict combines both layers: a rule result (FLAGGED / CLEAN with reas
 
 **Current state:** The off-chain agent and the on-chain contract implement identical rule logic independently. The agent runs rule checks against a local address registry and calls the LLM; the contract stores verdicts permanently on-chain. Wiring the agent to query the live contract at runtime is the immediate next step (see Roadmap).
 
+Local vs. live deployment: The diagram above reflects the local dev setup (UI on port 5173, agent on port 4000). In the live demo, the same architecture is split across two hosts: the React UI is deployed on Vercel, and the off-chain agent runs on Render. The UI calls the Render-hosted agent over HTTPS instead of localhost:4000.
+
 ---
 
 ## Live Deployment
@@ -75,6 +79,8 @@ The DaoMonitor contract is deployed and verified on Casper Testnet.
 | Deploy Transaction | [View on testnet.cspr.live](https://testnet.cspr.live/deploy/52c0252373a1a62a0f7916da28e3261fc6d3e3c72bdda767aa1693ca73cebe21) |
 | Network | Casper Testnet (`casper-test`) |
 | Protocol Version | 2.2.2 |
+
+The full application (UI + agent) is also live at https://dao-monitor.vercel.app. The agent runs on Render's free tier, which spins down after inactivity; the first request may take 30–50 seconds while the instance wakes up; subsequent requests are fast.
 
 ---
 
@@ -167,10 +173,9 @@ cargo test
 |---|---|
 | Smart contract | Rust, [Odra Framework](https://odra.dev) 2.8.2 |
 | Blockchain | Casper Network (Testnet) |
-| Off-chain agent | Node.js, Express 5 |
+| Off-chain agent | Node.js, Express 5 (hosted on Render) |
 | AI / LLM | OpenRouter (`openrouter/auto`) |
-| Frontend | React, Vite |
-
+| Frontend | React, Vite (hosted on Vercel) |
 ---
 
 ## Roadmap
