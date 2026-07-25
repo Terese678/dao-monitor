@@ -63,7 +63,7 @@ The final verdict combines both layers: a rule result (FLAGGED / CLEAN with reas
 +---------------------------------------------------------+
 ```
 
-**Current state:** The off-chain agent and the on-chain contract implement identical rule logic independently. The agent runs rule checks against a local address registry and calls the LLM; the contract stores verdicts permanently on-chain. Wiring the agent to query the live contract at runtime is the immediate next step (see Roadmap).
+**Current state:** The off-chain agent queries the deployed DaoMonitor contract on Casper Testnet directly for Rule 3 (recipient history), using the Casper JS SDK. The on-chain contract and the off-chain agent now share one source of truth; the agent's rule check reads live contract state, and every verdict is stored permanently on-chain as an auditable trail.
 
 Local vs. live deployment: The diagram above reflects the local dev setup (UI on port 5173, agent on port 4000). In the live demo, the same architecture is split across two hosts: the React UI is deployed on Vercel, and the off-chain agent runs on Render. The UI calls the Render-hosted agent over HTTPS instead of localhost:4000.
 
@@ -180,7 +180,6 @@ cargo test
 
 ## Roadmap
 
-- **Wire agent to live contract** - replace the local hardcoded address registry with live queries to the deployed DaoMonitor contract, so the rule check and the on-chain audit trail share one source of truth
 - **Threshold configuration via contract** - expose the amount threshold as an on-chain parameter so DAOs can set their own limit without redeploying
 - **Known-address management UI** - let DAO admins register and remove trusted addresses through the frontend
 
