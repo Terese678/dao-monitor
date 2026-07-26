@@ -137,7 +137,7 @@ Fill in the form fields and click **Evaluate Proposal**. The verdict panel will 
 
 **Try a FLAGGED case:** Amount `5000`, Recipient `unknown_addr`, Justification `pls approve`
 
-**Try a CLEAN case:** Amount `500`, Recipient `known_addr`, Justification `Funding Q3 community marketing campaign across social channels`
+**Try a CLEAN case:** To test the CLEAN path, a recipient address must first be registered on-chain via the contract's `register_address()` entry point. Once registered, that address will pass Rule 3 and — with a valid amount and justification — return a CLEAN verdict. The contract package hash for direct interaction is `d1c56241f681405a5f57adc4021e3a642d5c24cd006815e332d59783aef252dd` on Casper Testnet.
 
 ---
 
